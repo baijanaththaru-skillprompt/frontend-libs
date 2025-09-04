@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 type TPost = {
   id: number;
@@ -60,7 +60,7 @@ export function PostList() {
   // }, []);
 
   if (isError) {
-    return <p>{error || "something went wrong!"}</p>;
+    return <p>{JSON.stringify(error) || "something went wrong!"}</p>;
   }
 
   const handlePostSubmit = () => {
@@ -71,7 +71,7 @@ export function PostList() {
         title,
       },
       {
-        onSuccess: (data) => {
+        onSuccess: () => {
           qc.invalidateQueries({
             queryKey: ["/posts"],
           });

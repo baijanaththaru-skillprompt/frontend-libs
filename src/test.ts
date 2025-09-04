@@ -1,10 +1,10 @@
 // Generic
 
-function getSum(n1, n2) {
-  return n1 + n2;
-}
+// function getSum(n1, n2) {
+//   return n1 + n2;
+// }
 
-const name: string = "ram";
+// const name: string = "ram";
 
 function logData<T>(data: T) {
   if (typeof data === "string") {

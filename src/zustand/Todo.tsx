@@ -36,6 +36,8 @@ export function Todo() {
     });
   };
 
+  const APP_NAME = import.meta.env.VITE_PUBLCI_APP_NAME;
+
   return (
     <div>
       {/* todo input field */}
@@ -46,7 +48,7 @@ export function Todo() {
       {/* delete button in each item to delete a todo item */}
 
       <div>
-        <h1>Todo List</h1>
+        <h1>{APP_NAME} List</h1>
 
         {/* Input + Add button */}
         <form>
@@ -100,10 +102,7 @@ export function Todo() {
                 >
                   Edit
                 </button>
-                <button
-                  type="button"
-                  onClick={(event) => handleDeleteTodo(todo.id)}
-                >
+                <button type="button" onClick={() => handleDeleteTodo(todo.id)}>
                   Delete
                 </button>
               </li>
